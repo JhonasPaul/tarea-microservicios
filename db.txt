@@ -1,0 +1,19 @@
+create database colegio_idat;
+
+create table aula(
+	id_aula integer  primary key auto_increment not null,
+    aula varchar(255)
+);
+
+create table alumno(
+	id_alumno integer  primary key auto_increment not null,
+    nombre varchar (255),
+    apellido varchar (255)
+);
+
+create table detalle_aula(
+	id_aula integer primary key,
+    id_alumno integer,
+    foreign key (id_aula) references aula(id_aula),
+    foreign key (id_alumno) references alumno(id_alumno)
+);
